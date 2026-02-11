@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 interface Post {
     id: string;
@@ -41,6 +42,7 @@ export default function Home() {
                     </li>
                 ))}
             </ul>
+            <Link to="/posts/create">作成</Link>
         </div>
     );
 }
