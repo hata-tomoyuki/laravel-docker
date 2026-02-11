@@ -35,6 +35,7 @@ export default function Show() {
             <p>Post ID: {id}</p>
             <p>Post Caption: {post?.caption}</p>
             <Link to="/">Back to Home</Link>
+            <Link to={`/posts/${post?.id}/edit`}>Edit Post</Link>
         </div>
     );
 }
