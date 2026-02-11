@@ -1,0 +1,16 @@
+@use 'common/variables' as *;
+
+// ベース
+body {
+    font-family: $font-stack;
+    margin: 0;
+    padding: 0;
+}
+
+.test {
+    color: $color-primary;
+    background-color: $color-bg-alt;
+    padding: $padding-md;
+    border: 1px solid $color-border;
+    font-size: $font-size-base;
+}
