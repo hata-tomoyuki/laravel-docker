@@ -4,14 +4,35 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "lint": "eslint resources/ts --ext .ts,.tsx",
+        "lint:fix": "eslint resources/ts --ext .ts,.tsx --fix",
+        "format": "prettier --write \"resources/ts/**/*.{ts,tsx,json,css}\"",
+        "format:check": "prettier --check \"resources/ts/**/*.{ts,tsx,json,css}\""
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
+        "@types/react": "^19.2.13",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^5.1.4",
         "axios": "^1.11.0",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^2.0.0",
         "tailwindcss": "^4.0.0",
-        "vite": "^7.0.7"
+        "typescript": "^5.9.3",
+        "vite": "^7.0.7",
+        "@eslint/js": "^9.28.0",
+        "eslint": "^9.28.0",
+        "eslint-config-prettier": "^10.0.0",
+        "eslint-plugin-react": "^7.37.2",
+        "eslint-plugin-react-hooks": "^5.1.0",
+        "eslint-plugin-react-refresh": "^0.4.16",
+        "globals": "^15.14.0",
+        "prettier": "^3.5.3",
+        "typescript-eslint": "^8.29.0"
+    },
+    "dependencies": {
+        "react": "^19.2.4",
+        "react-dom": "^19.2.4"
     }
 }
