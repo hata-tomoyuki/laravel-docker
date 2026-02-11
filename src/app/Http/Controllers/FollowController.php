@@ -1,10 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-class FollowController extends Controller
+final class FollowController extends Controller
 {
     //
 }
