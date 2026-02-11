@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 interface Post {
     id: string;
@@ -12,6 +12,7 @@ interface Post {
 export default function Show() {
     const { id } = useParams();
     const [post, setPost] = useState<Post | null>(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         try {
@@ -29,6 +30,20 @@ export default function Show() {
         }
     }, [id]);
 
+    const handleDelete = async () => {
+        try {
+            const response = await fetch(`/api/posts/${id}`, {
+                method: "DELETE",
+            });
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            navigate("/");
+        } catch (error) {
+            console.error("Error deleting post:", error);
+        }
+    };
+
     return (
         <div>
             <h1>Show Post</h1>
@@ -36,6 +51,7 @@ export default function Show() {
             <p>Post Caption: {post?.caption}</p>
             <Link to="/">Back to Home</Link>
             <Link to={`/posts/${post?.id}/edit`}>Edit Post</Link>
+            <button onClick={handleDelete}>削除</button>
         </div>
     );
 }
