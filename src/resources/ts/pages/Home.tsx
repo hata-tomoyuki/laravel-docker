@@ -34,7 +34,7 @@ export default function Home() {
             <ul>
                 {posts.map((post) => (
                     <li key={post.id}>
-                        <p>{post.caption}</p>
+                        <Link to={`/posts/${post.id}`}>{post.caption}</Link>
                         <small>
                             Posted by User {post.user_id} on{" "}
                             {new Date(post.created_at).toLocaleDateString()}
