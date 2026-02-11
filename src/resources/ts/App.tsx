@@ -1,11 +1,12 @@
-import Test from "./components/Test";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 const App = () => {
     return (
-        <>
-            <h1>Hello React + Laravel!!!!!!</h1>
-            <Test />
-        </>
+        <Routes>
+            {/* ルート定義 */}
+            <Route path="/" element={<Home />} />
+        </Routes>
     );
 };
 
